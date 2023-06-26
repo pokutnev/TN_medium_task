@@ -19,7 +19,7 @@ class BinarySearchTest {
 
         int result1 = BinarySearch.searchElement(array, target1);
         int result2 = BinarySearch.searchElement(array, target2);
-        int result3 = BinarySearch.searchElement(array, target3);
+git        int result3 = BinarySearch.searchElement(array, target3);
 
         Assertions.assertEquals(7, result1);
         Assertions.assertEquals(-1, result2);
