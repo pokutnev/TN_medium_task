@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Scanner;
 
 public class Main {
@@ -23,12 +25,13 @@ public class Main {
 
         System.out.println("Введите число для поиска в массиве:");
         int target = sc.nextInt();
-        boolean flag = BinarySearch.searchElement(arr, target);
+        int index = BinarySearch.searchElement(arr, target);
 
-        if(flag)
-            System.out.println("Числа " + target + " есть в массиве");
+
+        if(index > 0)
+            System.out.println(index);
         else
-            System.out.println("Числа " + target + " нет в массиве");
+            System.out.println("нет в массиве");
 
     }
 }

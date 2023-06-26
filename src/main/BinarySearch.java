@@ -1,3 +1,5 @@
+package main;
+
 public class BinarySearch {
 
     public static int[] bubbleSort(int[] array){
@@ -15,27 +17,29 @@ public class BinarySearch {
         return array;
     }
 
-    public static boolean searchElement(int[] array, int target){
+    public static int searchElement(int[] array, int target){
 
         int leftBoarder = 0;
-        int rightBoarder = array.length;
+        int rightBoarder = array.length - 1;
 
-        while (leftBoarder != rightBoarder) {
+        while (leftBoarder <= rightBoarder) {
 
             int midArr = (leftBoarder + rightBoarder) >> 1;
 
             if (array[midArr] == target)
-                return true;
-            else if(array[midArr] > target){
+                return midArr;
+
+            else if(array[midArr] > target)
                 rightBoarder = midArr - 1;
-            }
-            else if (array[midArr] < target) {
+
+
+            else if (array[midArr] < target)
                 leftBoarder = midArr + 1;
-            }
+
 
         }
 
-        return false;
+        return -1;
 
 
     }
