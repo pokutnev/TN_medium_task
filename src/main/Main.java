@@ -1,6 +1,10 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-
 
         Node root = new Node(5);
 
@@ -12,8 +16,12 @@ public class Main {
         root.getRightChild().setLeftChild(new Node(6));
         root.getRightChild().setRightChild(new Node(8));
 
+        List<Integer> resultList = new ArrayList<>();
+
         Postorder T = new Postorder();
-        T.getTreeElements(root);
+        T.getTreeElements(root, resultList);
+
+        System.out.println(resultList);
 
     }
 }
