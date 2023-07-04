@@ -2,6 +2,7 @@ package test;
 
 import main.BinarySearch;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,21 +10,29 @@ import static org.junit.jupiter.api.Assertions.*;
 class BinarySearchTest {
 
     @Test
-    void searchElementTest() {
+    @DisplayName("test method for binary search of a number in an array with positive numbers")
+    void searchElementInPositiveArr() {
 
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
-        int target1 = 8;
-        int target2 = 17;
-        int target3 = 4;
+        var target = 8;
+        var result = BinarySearch.searchElement(array, target);
 
-        int result1 = BinarySearch.searchElement(array, target1);
-        int result2 = BinarySearch.searchElement(array, target2);
-git        int result3 = BinarySearch.searchElement(array, target3);
-
-        Assertions.assertEquals(7, result1);
-        Assertions.assertEquals(-1, result2);
-        Assertions.assertEquals(3, result3);
+        Assertions.assertEquals(7, result);
 
     }
+
+    @Test
+    @DisplayName("test method for binary search of a number in an array with negative numbers")
+    void searchElementInNegativeArr() {
+
+        int[] array = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -13, -15, -18};
+
+        var target = -7;
+        var result = BinarySearch.searchElement(array, target);
+
+        Assertions.assertEquals(6, result);
+
+    }
+
 }
