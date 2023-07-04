@@ -27,7 +27,8 @@ class InorderTest {
         List<Integer> methodResult = new ArrayList<>();
         List<Integer> expectedResult = List.of(2, 3, 4, 5, 6, 7, 8);
 
-        Inorder.getTreeElements(root, methodResult);
+        Inorder InorderObject = new Inorder();
+        InorderObject.getTreeElements(root, methodResult);
 
         Assertions.assertEquals(expectedResult, methodResult);
     }
@@ -41,7 +42,8 @@ class InorderTest {
         List<Integer> methodResult = new ArrayList<>();
         List<Integer> expectedResult = List.of();
 
-        Inorder.getTreeElements(root, methodResult);
+        Inorder InorderObject = new Inorder();
+        InorderObject.getTreeElements(root, methodResult);
 
         Assertions.assertEquals(expectedResult, methodResult);
     }
