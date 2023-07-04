@@ -2,7 +2,7 @@ package main;
 
 public class BinarySearch {
 
-    public static int searchElement(int[] array, int target) {
+    public int searchElement(int[] array, int target) {
 
         int leftBoarder = 0;
         int rightBoarder = array.length - 1;

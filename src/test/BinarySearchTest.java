@@ -16,7 +16,8 @@ class BinarySearchTest {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
         var target = 8;
-        var result = BinarySearch.searchElement(array, target);
+        BinarySearch BinarySearchObject = new BinarySearch();
+        var result = BinarySearchObject.searchElement(array, target);
 
         Assertions.assertEquals(7, result);
 
@@ -29,7 +30,8 @@ class BinarySearchTest {
         int[] array = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -13, -15, -18};
 
         var target = -7;
-        var result = BinarySearch.searchElement(array, target);
+        BinarySearch BinarySearchObject = new BinarySearch();
+        var result = BinarySearchObject.searchElement(array, target);
 
         Assertions.assertEquals(6, result);
 
