@@ -26,7 +26,8 @@ class DuplicateElementsTest {
         list.add(3);
 
         List<Integer> expectedResult = List.of(1, 3, 4);
-        List<Integer> resultList = DuplicateElements.getDuplicates(list);
+        DuplicateElements DuplicateElementsObject = new DuplicateElements();
+        List<Integer> resultList = DuplicateElementsObject.getDuplicates(list);
 
         Assertions.assertEquals(expectedResult, resultList);
     }
@@ -46,7 +47,8 @@ class DuplicateElementsTest {
         list.add(7);
 
         List<Integer> expectedResult = List.of();
-        List<Integer> resultList = DuplicateElements.getDuplicates(list);
+        DuplicateElements DuplicateElementsObject = new DuplicateElements();
+        List<Integer> resultList = DuplicateElementsObject.getDuplicates(list);
 
         Assertions.assertEquals(expectedResult, resultList);
     }

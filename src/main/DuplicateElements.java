@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class DuplicateElements {
 
-    public static List<Integer> getDuplicates(List<Integer> sequenceOfElements) {
+    public List<Integer> getDuplicates(List<Integer> sequenceOfElements) {
 
         Map<Integer, Integer> uniqueElements = new HashMap<>();
 
