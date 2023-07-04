@@ -1,14 +1,15 @@
 package test;
 
-
 import main.MatrCheck;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MatrCheckTest {
 
     @Test
-    void isValidMatr() {
+    @DisplayName("test method validity check and getting result true")
+    void isValidMatrReturnTrue() {
 
         char[][] board ={{'5','3','.','.','7','.','.','.','.'}
                 ,{'6','.','.','1','9','5','.','.','.'}
@@ -22,11 +23,29 @@ class MatrCheckTest {
         };
 
         boolean expectedResult = true;
+        boolean methodResult = MatrCheck.isValidMatr(board);
 
-        MatrCheck object = new MatrCheck();
-        boolean result = object.isValidMatr(board);
+        Assertions.assertEquals(expectedResult, methodResult);
+    }
 
-        Assertions.assertEquals(expectedResult, result);
+    @Test
+    @DisplayName("test method validity check and getting result false")
+    void isValidMatrReturnFalse() {
 
+        char[][] board ={{'5','3','.','.','7','.','.','.','.'}
+                ,{'6','.','.','1','9','5','.','.','.'}
+                ,{'.','9','8','.','.','.','.','6','.'}
+                ,{'8','.','.','.','6','.','.','.','3'}
+                ,{'4','.','.','8','.','3','.','.','1'}
+                ,{'7','.','.','.','2','.','.','.','6'}
+                ,{'.','6','.','.','.','.','.','8','.'}
+                ,{'.','.','.','4','1','9','.','.','5'}
+                ,{'.','.','.','.','8','.','.','7','9'}
+        };
+
+        boolean expectedResult = false;
+        boolean methodResult = MatrCheck.isValidMatr(board);
+
+        Assertions.assertEquals(expectedResult, methodResult);
     }
 }
