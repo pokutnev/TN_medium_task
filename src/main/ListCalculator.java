@@ -4,13 +4,13 @@ import java.util.List;
 
 public class ListCalculator {
 
-    public static int getPositiveSum(List<Integer> sum) {
+    public int getPositiveSum(List<Integer> sum) {
         return sum.stream().
                 filter(number -> number > 0).
                 reduce(0, Integer::sum);
     }
 
-    public static int getNegativeSum(List<Integer> sum) {
+    public int getNegativeSum(List<Integer> sum) {
         return sum.stream().
                 filter(number -> number < 0).
                 reduce(0, Integer::sum);

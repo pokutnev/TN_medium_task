@@ -24,7 +24,8 @@ class ListCalculatorTest {
         list.add(-1);
 
         int expectedResult = 14;
-        int positiveSum = ListCalculator.getPositiveSum(list);
+        ListCalculator CalculatorObject = new ListCalculator();
+        int positiveSum = CalculatorObject.getPositiveSum(list);
 
         Assertions.assertEquals(expectedResult, positiveSum);
     }
@@ -43,7 +44,8 @@ class ListCalculatorTest {
         list.add(-1);
 
         int expectedResult = -11;
-        int negativeSum = ListCalculator.getNegativeSum(list);
+        ListCalculator CalculatorObject = new ListCalculator();
+        int negativeSum = CalculatorObject.getNegativeSum(list);
 
         Assertions.assertEquals(expectedResult, negativeSum);
     }
