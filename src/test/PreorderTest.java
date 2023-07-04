@@ -28,7 +28,8 @@ class PreorderTest {
         List<Integer> expectedResult = List.of(5, 3, 2, 4, 7, 6, 8);
 
         List<Integer> methodResult = new ArrayList<>();
-        Preorder.getTreeElements(root, methodResult);
+        Preorder PreorderObject = new Preorder();
+        PreorderObject.getTreeElements(root, methodResult);
 
         Assertions.assertEquals(expectedResult, methodResult);
     }
@@ -42,7 +43,8 @@ class PreorderTest {
         List<Integer> expectedResult = List.of();
 
         List<Integer> methodResult = new ArrayList<>();
-        Preorder.getTreeElements(root, methodResult);
+        Preorder PreorderObject = new Preorder();
+        PreorderObject.getTreeElements(root, methodResult);
 
         Assertions.assertEquals(expectedResult, methodResult);
     }
