@@ -28,7 +28,8 @@ class PostorderTest {
         List<Integer> resultList = new ArrayList<>();
         List<Integer> expectedResult = List.of(2, 4, 3, 6, 8, 7, 5);
 
-        Postorder.getTreeElements(root, resultList);
+        Postorder postorderObject = new Postorder();
+        postorderObject.getTreeElements(root, resultList);
 
         Assertions.assertEquals(expectedResult, resultList);
     }
@@ -42,7 +43,8 @@ class PostorderTest {
         List<Integer> methodResult = new ArrayList<>();
         List<Integer> expectedResult = List.of();
 
-        Postorder.getTreeElements(root, methodResult);
+        Postorder postorderObject = new Postorder();
+        postorderObject.getTreeElements(root, methodResult);
 
         Assertions.assertEquals(expectedResult, methodResult);
     }
