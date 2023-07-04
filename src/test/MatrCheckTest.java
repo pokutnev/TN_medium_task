@@ -23,7 +23,8 @@ class MatrCheckTest {
         };
 
         boolean expectedResult = true;
-        boolean methodResult = MatrCheck.isValidMatr(board);
+        MatrCheck matrCheckObject = new MatrCheck();
+        boolean methodResult = matrCheckObject.isValidMatr(board);
 
         Assertions.assertEquals(expectedResult, methodResult);
     }
@@ -44,7 +45,8 @@ class MatrCheckTest {
         };
 
         boolean expectedResult = false;
-        boolean methodResult = MatrCheck.isValidMatr(board);
+        MatrCheck matrCheckObject = new MatrCheck();
+        boolean methodResult = matrCheckObject.isValidMatr(board);
 
         Assertions.assertEquals(expectedResult, methodResult);
     }

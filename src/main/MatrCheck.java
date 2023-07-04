@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class MatrCheck {
 
-    public static boolean isValidMatr(char[][] board){
+    public boolean isValidMatr(char[][] board){
 
         for (char[] rowOfChar : board) {
             if (!isValidRow(rowOfChar)) {
@@ -21,7 +21,7 @@ public class MatrCheck {
         return true;
     }
 
-    public static boolean isValidRow(char[] board){
+    public boolean isValidRow(char[] board){
 
         Map<Character, Integer> mapA = new HashMap<>();
 
@@ -44,7 +44,7 @@ public class MatrCheck {
         return true;
     }
 
-    public static boolean isValidColumn(char[][] board, int column){
+    public boolean isValidColumn(char[][] board, int column){
 
         for (char[] chars : board) {
             if (chars[column] <= '9' && chars[column] >= '1') {
@@ -55,7 +55,7 @@ public class MatrCheck {
         return false;
     }
 
-    public static boolean isValidCell(char c){
+    public boolean isValidCell(char c){
 
         if(c <= '9' && c >= '1') {
             return true;
