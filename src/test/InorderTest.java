@@ -3,15 +3,16 @@ package test;
 import main.Inorder;
 import main.Node;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
 class InorderTest {
 
     @Test
-    void getTreeElements() {
+    @DisplayName("test method getting tree Elements from list with Elements")
+    void getTreeElementsFromFullList() {
 
         Node root = new Node(5);
 
@@ -23,15 +24,26 @@ class InorderTest {
         root.getRightChild().setLeftChild(new Node(6));
         root.getRightChild().setRightChild(new Node(8));
 
-        List<Integer> resultList = new ArrayList<>();
+        List<Integer> methodResult = new ArrayList<>();
         List<Integer> expectedResult = List.of(2, 3, 4, 5, 6, 7, 8);
 
-        Inorder T = new Inorder();
-        T.getTreeElements(root, resultList);
+        Inorder.getTreeElements(root, methodResult);
 
-        Assertions.assertEquals(expectedResult, resultList);
-
-
-
+        Assertions.assertEquals(expectedResult, methodResult);
     }
+
+    @Test
+    @DisplayName("test method getting tree Elements from list without Elements")
+    void getTreeElementsFromEmptyList() {
+
+        Node root = null;
+
+        List<Integer> methodResult = new ArrayList<>();
+        List<Integer> expectedResult = List.of();
+
+        Inorder.getTreeElements(root, methodResult);
+
+        Assertions.assertEquals(expectedResult, methodResult);
+    }
+
 }

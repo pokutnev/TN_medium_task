@@ -4,24 +4,22 @@ import java.util.List;
 
 public class Inorder {
 
-    public List<Integer> getTreeElements(Node root, List<Integer> resultList){
+    public static List<Integer> getTreeElements(Node root, List<Integer> resultElements) {
 
-        if (root == null)
-            return resultList;
-        else{
-
-            if (root.getLeftChild() != null)
-                getTreeElements(root.getLeftChild(), resultList);
-
-            resultList.add(root.getValue());
-
-            if (root.getRightChild() != null)
-                getTreeElements(root.getRightChild(), resultList);
-
+        if (root == null) {
+            return resultElements;
+        }
+        if (root.getLeftChild() != null) {
+            getTreeElements(root.getLeftChild(), resultElements);
         }
 
-        return resultList;
+        resultElements.add(root.getValue());
 
+        if (root.getRightChild() != null) {
+            getTreeElements(root.getRightChild(), resultElements);
+        }
+
+        return resultElements;
     }
 
 }
