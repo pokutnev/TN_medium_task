@@ -1,6 +1,7 @@
 package main;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class MatrCheck {
@@ -22,21 +23,17 @@ public class MatrCheck {
     }
 
     public boolean isValidRow(char[] board){
+        var setOfChars = new HashSet<Character>();
 
-        Map<Character, Integer> mapA = new HashMap<>();
-
-        for (char c : board) {
+        for (char c: board) {
             if(!isValidCell(c)) {
                 return false;
             }
 
-            if (c <= '9' && c >= '1') {
-                mapA.merge(c, 1, Integer::sum);
+            if (c == '.' || c <= '9' && c >= '1' && !setOfChars.contains(c)) {
+                setOfChars.add(c);
             }
-        }
-
-        for (Map.Entry<Character, Integer> i: mapA.entrySet()){
-            if (i.getValue() > 1) {
+            else {
                 return false;
             }
         }
