@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Preorder {
 
-    public static List<Integer> getTreeElements(Node root, List<Integer> resultElements){
+    public List<Integer> getTreeElements(Node root, List<Integer> resultElements){
 
         if (root == null) {
             return resultElements;

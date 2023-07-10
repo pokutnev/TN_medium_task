@@ -2,12 +2,13 @@ package test;
 
 import main.Node;
 import main.Preorder;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PreorderTest {
 
@@ -31,7 +32,7 @@ class PreorderTest {
         var preorderObject = new Preorder();
         preorderObject.getTreeElements(root, treeElements);
 
-        Assertions.assertEquals(expectedResult, treeElements);
+        assertEquals(expectedResult, treeElements);
     }
 
     @Test
@@ -47,7 +48,7 @@ class PreorderTest {
         var preorderObject = new Preorder();
         preorderObject.getTreeElements(root, treeElements);
 
-        Assertions.assertEquals(expectedResult, treeElements);
+        assertEquals(expectedResult, treeElements);
     }
 
     @Test
@@ -64,7 +65,7 @@ class PreorderTest {
         var preorderObject = new Preorder();
         preorderObject.getTreeElements(root, treeElements);
 
-        Assertions.assertEquals(expectedResult, treeElements);
+        assertEquals(expectedResult, treeElements);
     }
 
     @Test
@@ -79,7 +80,7 @@ class PreorderTest {
         var preorderObject = new Preorder();
         preorderObject.getTreeElements(root, treeElements);
 
-        Assertions.assertEquals(expectedResult, treeElements);
+        assertEquals(expectedResult, treeElements);
     }
 
 }
