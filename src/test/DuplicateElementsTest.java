@@ -1,11 +1,11 @@
 package test;
 
 import main.DuplicateElements;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DuplicateElementsTest {
 
@@ -13,44 +13,44 @@ class DuplicateElementsTest {
     @DisplayName("test method for finding duplicate elements and getting a list with duplicates")
     void getDuplicatesReturnListWithDuplicates() {
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> sequenceOfElements = new ArrayList<>();
 
-        list.add(1);
-        list.add(12);
-        list.add(4);
-        list.add(3);
-        list.add(8);
-        list.add(1);
-        list.add(3);
-        list.add(4);
-        list.add(3);
+        sequenceOfElements.add(1);
+        sequenceOfElements.add(12);
+        sequenceOfElements.add(4);
+        sequenceOfElements.add(3);
+        sequenceOfElements.add(8);
+        sequenceOfElements.add(1);
+        sequenceOfElements.add(3);
+        sequenceOfElements.add(4);
+        sequenceOfElements.add(3);
 
         List<Integer> expectedResult = List.of(1, 3, 4);
-        DuplicateElements DuplicateElementsObject = new DuplicateElements();
-        List<Integer> resultList = DuplicateElementsObject.getDuplicates(list);
+        DuplicateElements duplicateElementsObject = new DuplicateElements();
+        List<Integer> resultList = duplicateElementsObject.getDuplicates(sequenceOfElements);
 
-        Assertions.assertEquals(expectedResult, resultList);
+        assertEquals(expectedResult, resultList);
     }
 
     @Test
     @DisplayName("test method for finding duplicate elements and getting empty list")
     void getDuplicatesReturnListWithoutDuplicates() {
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> sequenceOfElements = new ArrayList<>();
 
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
-        list.add(7);
+        sequenceOfElements.add(1);
+        sequenceOfElements.add(2);
+        sequenceOfElements.add(3);
+        sequenceOfElements.add(4);
+        sequenceOfElements.add(5);
+        sequenceOfElements.add(6);
+        sequenceOfElements.add(7);
 
         List<Integer> expectedResult = List.of();
-        DuplicateElements DuplicateElementsObject = new DuplicateElements();
-        List<Integer> resultList = DuplicateElementsObject.getDuplicates(list);
+        DuplicateElements duplicateElementsObject = new DuplicateElements();
+        List<Integer> resultList = duplicateElementsObject.getDuplicates(sequenceOfElements);
 
-        Assertions.assertEquals(expectedResult, resultList);
+        assertEquals(expectedResult, resultList);
     }
 
 }
