@@ -14,8 +14,8 @@ class BinarySearchTest {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
         var target = 8;
-        var BinarySearchObject = new BinarySearch();
-        var searchResult= BinarySearchObject.searchElement(array, target);
+        var binarySearchObject = new BinarySearch();
+        var searchResult= binarySearchObject.searchElement(array, target);
 
         assertEquals(7, searchResult);
     }
