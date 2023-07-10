@@ -46,8 +46,12 @@ public class MatrCheck {
 
     public boolean isValidColumn(char[][] board, int column){
 
-        for (char[] chars : board) {
-            if (chars[column] <= '9' && chars[column] >= '1') {
+        for (int i = 0; i < board.length; i++) {
+            if(!isValidCell(board[i][column])) {
+                return false;
+            }
+
+            if (board[i][column] <= '9' && board[i][column] >= '1') {
                 return true;
             }
         }

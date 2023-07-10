@@ -1,9 +1,9 @@
 package test;
 
 import main.MatrCheck;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MatrCheckTest {
 
@@ -11,7 +11,8 @@ class MatrCheckTest {
     @DisplayName("test method validity check and getting result true")
     void isValidMatrReturnTrue() {
 
-        char[][] board ={{'5','3','.','.','7','.','.','.','.'}
+        char[][] board =
+                {{'5','3','.','.','7','.','.','.','.'}
                 ,{'6','.','.','1','9','5','.','.','.'}
                 ,{'.','9','8','.','.','.','.','6','.'}
                 ,{'8','.','.','.','6','.','.','.','3'}
@@ -23,17 +24,18 @@ class MatrCheckTest {
         };
 
         boolean expectedResult = true;
-        MatrCheck matrCheckObject = new MatrCheck();
-        boolean methodResult = matrCheckObject.isValidMatr(board);
+        var matrCheckObject = new MatrCheck();
+        boolean isMatrValid = matrCheckObject.isValidMatr(board);
 
-        Assertions.assertEquals(expectedResult, methodResult);
+        assertEquals(expectedResult, isMatrValid);
     }
 
     @Test
     @DisplayName("test method validity check and getting result false")
     void isValidMatrReturnFalse() {
 
-        char[][] board ={{'5','3','.','.','7','.','.','.','.'}
+        char[][] board =
+                {{'5','3','.','.','7','.','.','.','.'}
                 ,{'6','.','.','1','9','5','.','.','.'}
                 ,{'.','9','8','.','.','.','.','6','.'}
                 ,{'8','.','.','.','6','.','.','.','3'}
@@ -45,9 +47,9 @@ class MatrCheckTest {
         };
 
         boolean expectedResult = false;
-        MatrCheck matrCheckObject = new MatrCheck();
-        boolean methodResult = matrCheckObject.isValidMatr(board);
+        var matrCheckObject = new MatrCheck();
+        boolean isMatrValid = matrCheckObject.isValidMatr(board);
 
-        Assertions.assertEquals(expectedResult, methodResult);
+        assertEquals(expectedResult, isMatrValid);
     }
 }
