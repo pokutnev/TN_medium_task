@@ -25,13 +25,13 @@ class InorderTest {
         root.getRightChild().setLeftChild(new Node(6));
         root.getRightChild().setRightChild(new Node(8));
 
-        List<Integer> methodResult = new ArrayList<>();
+        List<Integer> treeElements = new ArrayList<>();
         List<Integer> expectedResult = List.of(2, 3, 4, 5, 6, 7, 8);
 
         var inorderObject = new Inorder();
-        inorderObject.getTreeElements(root, methodResult);
+        inorderObject.getTreeElements(root, treeElements);
 
-        assertEquals(expectedResult, methodResult);
+        assertEquals(expectedResult, treeElements);
     }
 
     @Test
@@ -42,13 +42,13 @@ class InorderTest {
 
         root.setLeftChild(new Node(3));
 
-        List<Integer> methodResult = new ArrayList<>();
+        List<Integer> treeElements = new ArrayList<>();
         List<Integer> expectedResult = List.of(3, 5);
 
         var inorderObject = new Inorder();
-        inorderObject.getTreeElements(root, methodResult);
+        inorderObject.getTreeElements(root, treeElements);
 
-        assertEquals(expectedResult, methodResult);
+        assertEquals(expectedResult, treeElements);
     }
 
     @Test
@@ -59,13 +59,13 @@ class InorderTest {
 
         root.setRightChild(new Node(1));
 
-        List<Integer> methodResult = new ArrayList<>();
+        List<Integer> treeElements = new ArrayList<>();
         List<Integer> expectedResult = List.of(8, 1);
 
         var inorderObject = new Inorder();
-        inorderObject.getTreeElements(root, methodResult);
+        inorderObject.getTreeElements(root, treeElements);
 
-        assertEquals(expectedResult, methodResult);
+        assertEquals(expectedResult, treeElements);
     }
 
     @Test
@@ -74,13 +74,13 @@ class InorderTest {
 
         Node root = null;
 
-        List<Integer> methodResult = new ArrayList<>();
+        List<Integer> treeElements = new ArrayList<>();
         List<Integer> expectedResult = List.of();
 
         var inorderObject = new Inorder();
-        inorderObject.getTreeElements(root, methodResult);
+        inorderObject.getTreeElements(root, treeElements);
 
-        assertEquals(expectedResult, methodResult);
+        assertEquals(expectedResult, treeElements);
     }
 
 }
