@@ -1,11 +1,9 @@
 package test;
 
 import main.BinarySearch;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BinarySearchTest {
 
@@ -16,11 +14,10 @@ class BinarySearchTest {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
         var target = 8;
-        BinarySearch BinarySearchObject = new BinarySearch();
-        var result = BinarySearchObject.searchElement(array, target);
+        var BinarySearchObject = new BinarySearch();
+        var searchResult= BinarySearchObject.searchElement(array, target);
 
-        Assertions.assertEquals(7, result);
-
+        assertEquals(7, searchResult);
     }
 
     @Test
@@ -30,11 +27,10 @@ class BinarySearchTest {
         int[] array = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -13, -15, -18};
 
         var target = -7;
-        BinarySearch BinarySearchObject = new BinarySearch();
-        var result = BinarySearchObject.searchElement(array, target);
+        var binarySearchObject = new BinarySearch();
+        var searchResult = binarySearchObject.searchElement(array, target);
 
-        Assertions.assertEquals(6, result);
-
+        assertEquals(6, searchResult);
     }
 
 }
