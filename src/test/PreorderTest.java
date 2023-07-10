@@ -27,11 +27,44 @@ class PreorderTest {
 
         List<Integer> expectedResult = List.of(5, 3, 2, 4, 7, 6, 8);
 
-        List<Integer> methodResult = new ArrayList<>();
-        Preorder PreorderObject = new Preorder();
-        PreorderObject.getTreeElements(root, methodResult);
+        List<Integer> treeElements = new ArrayList<>();
+        Preorder preorderObject = new Preorder();
+        preorderObject.getTreeElements(root, treeElements);
 
-        Assertions.assertEquals(expectedResult, methodResult);
+        Assertions.assertEquals(expectedResult, treeElements);
+    }
+
+    @Test
+    @DisplayName("test method getting tree Elements from list with Elements")
+    void getTreeElementsWithoutRightChild() {
+
+        Node root = new Node(5);
+        root.setLeftChild(new Node(3));
+
+        List<Integer> expectedResult = List.of(5, 3);
+
+        List<Integer> treeElements = new ArrayList<>();
+        var preorderObject = new Preorder();
+        preorderObject.getTreeElements(root, treeElements);
+
+        Assertions.assertEquals(expectedResult, treeElements);
+    }
+
+    @Test
+    @DisplayName("test method getting tree Elements from list with Elements")
+    void getTreeElementsWithoutLeftChild() {
+
+        Node root = new Node(8);
+
+        root.setRightChild(new Node(2));
+
+        List<Integer> expectedResult = List.of(8, 2);
+
+        List<Integer> treeElements = new ArrayList<>();
+        var preorderObject = new Preorder();
+        preorderObject.getTreeElements(root, treeElements);
+
+        Assertions.assertEquals(expectedResult, treeElements);
     }
 
     @Test
@@ -42,11 +75,11 @@ class PreorderTest {
 
         List<Integer> expectedResult = List.of();
 
-        List<Integer> methodResult = new ArrayList<>();
-        Preorder PreorderObject = new Preorder();
-        PreorderObject.getTreeElements(root, methodResult);
+        List<Integer> treeElements = new ArrayList<>();
+        Preorder preorderObject = new Preorder();
+        preorderObject.getTreeElements(root, treeElements);
 
-        Assertions.assertEquals(expectedResult, methodResult);
+        Assertions.assertEquals(expectedResult, treeElements);
     }
 
 }
